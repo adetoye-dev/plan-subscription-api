@@ -13,6 +13,9 @@ export const initializePayment = async (req, res) => {
       reference: ref,
       callback_url: process.env.SERVER_URL + "/api/payment/verify/" + ref,
       channels: ["card"],
+      metadata: {
+        cancel_action: process.env.CLIENT_URL,
+      },
     });
     res.json(data.data);
   } catch (error) {
