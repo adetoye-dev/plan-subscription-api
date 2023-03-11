@@ -14,7 +14,6 @@ export const initializePayment = async (req, res) => {
       callback_url: process.env.SERVER_URL + "/api/payment/verify/" + ref,
       channels: ["card"],
     });
-    console.log(data.data);
     res.json(data.data);
   } catch (error) {
     res.json(error.data);
