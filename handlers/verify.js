@@ -5,7 +5,7 @@ dotenv.config();
 
 export const verifyPayment = async (req, res) => {
   const clientUrl = process.env.CLIENT_URL;
-  const ref = req.params.reference;
+  const ref = req.query.reference;
   try {
     const { data } = await api.get("/transaction/verify/" + ref);
     if (data.data.status !== "success") return res.status(500).json(data);

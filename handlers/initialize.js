@@ -11,7 +11,7 @@ export const initializePayment = async (req, res) => {
       amount: "1000",
       email: req.body.email,
       reference: ref,
-      callback_url: process.env.SERVER_URL + "/api/payment/verify/" + ref,
+      callback_url: process.env.SERVER_URL + "/api/payment/verify",
       channels: ["card"],
       metadata: {
         cancel_action: process.env.CLIENT_URL,

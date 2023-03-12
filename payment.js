@@ -9,6 +9,6 @@ router.get("/", (req, res) => {
 });
 
 router.post("/initialize", initializePayment);
-router.get("/verify/:reference", verifyPayment);
+router.get("/verify", verifyPayment);
 
 export default router;
